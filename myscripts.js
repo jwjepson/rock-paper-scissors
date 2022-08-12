@@ -43,6 +43,9 @@ function game() {
             console.log(`${computerSelection} beats ${playerSelection}`);
             computerScore ++;
         }
+        else {
+            console.log("Tie!");
+        }
         console.log(`Your Score: ${playerScore}`);
         console.log(`Computers Score: ${computerScore}`);
     }   
