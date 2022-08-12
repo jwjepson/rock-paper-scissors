@@ -28,3 +28,22 @@ function simulateRound(playerSelection, computerSelection) {
         return "win";
     }
 }
+
+function game() {
+    playerScore = 0;
+    computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt("Rock, paper or Scissors? ");
+        const computerSelection = getComputerChoice();
+        if (simulateRound(playerSelection, computerSelection) == "win") {
+            playerScore ++;
+        }
+        else if (simulateRound(playerSelection, computerSelection) == "lose") {
+            computerScore ++;
+        }
+        console.log(`Your Score: ${playerScore}`);
+        console.log(`Computers Score: ${computerScore}`);
+    }   
+}
+
+game();
