@@ -34,20 +34,26 @@ function game() {
     computerScore = 0;
     for (let i = 0; i < 5; i++) {
         const playerSelection = prompt("Rock, paper or Scissors? ");
-        const computerSelection = getComputerChoice();
-        if (simulateRound(playerSelection, computerSelection) == "win") {
-            console.log(`${playerSelection} beats ${computerSelection}`);
-            playerScore ++;
-        }
-        else if (simulateRound(playerSelection, computerSelection) == "lose") {
-            console.log(`${computerSelection} beats ${playerSelection}`);
-            computerScore ++;
+        if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors") {
+            const computerSelection = getComputerChoice();
+            if (simulateRound(playerSelection, computerSelection) == "win") {
+                console.log(`${playerSelection} beats ${computerSelection}`);
+                playerScore ++;
+            }
+            else if (simulateRound(playerSelection, computerSelection) == "lose") {
+                console.log(`${computerSelection} beats ${playerSelection}`);
+                computerScore ++;
+            }
+            else {
+                console.log("Tie!");
+            }
+            console.log(`Your Score: ${playerScore}`);
+            console.log(`Computers Score: ${computerScore}`);
         }
         else {
-            console.log("Tie!");
+            console.log("Invalid input");
+            i--;
         }
-        console.log(`Your Score: ${playerScore}`);
-        console.log(`Computers Score: ${computerScore}`);
     }   
     if (playerScore > computerScore) {
         console.log("You win!");
