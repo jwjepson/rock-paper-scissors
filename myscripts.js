@@ -36,9 +36,11 @@ function game() {
         const playerSelection = prompt("Rock, paper or Scissors? ");
         const computerSelection = getComputerChoice();
         if (simulateRound(playerSelection, computerSelection) == "win") {
+            console.log(`${playerSelection} beats ${computerSelection}`);
             playerScore ++;
         }
         else if (simulateRound(playerSelection, computerSelection) == "lose") {
+            console.log(`${computerSelection} beats ${playerSelection}`);
             computerScore ++;
         }
         console.log(`Your Score: ${playerScore}`);
