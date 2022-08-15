@@ -33,18 +33,18 @@ function simulateRound(playerSelection, computerSelection) {
 }
 
 function game(e) {
-    const score = document.querySelector(".score");
+    const result = document.querySelector(".result");
     const playerSelection = e.target.textContent;
     if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors") {
         const computerSelection = getComputerChoice();
         if (simulateRound(playerSelection, computerSelection) == "win") {
             console.log(`${playerSelection} beats ${computerSelection}`);
-            score.textContent = `${playerSelection} beats ${computerSelection}`;
+            result.textContent = `${playerSelection} beats ${computerSelection}`;
             playerScore ++;
         }
         else if (simulateRound(playerSelection, computerSelection) == "lose") {
             console.log(`${computerSelection} beats ${playerSelection}`);
-            score.textContent = `${computerSelection} beats ${playerSelection}`;
+            result.textContent = `${computerSelection} beats ${playerSelection}`;
             computerScore ++;
         }
         else {
