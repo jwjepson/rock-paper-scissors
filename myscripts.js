@@ -2,32 +2,31 @@ playerScore = 0;
 computerScore = 0;
 
 function getComputerChoice() {
-    const choices = ["rock", "paper", "scissors"];
+    const choices = ["Rock", "Paper", "Scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
 
 function simulateRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
     if (playerSelection == computerSelection) {
         return "tie";
     }
-    else if (playerSelection == "rock" && computerSelection == "paper") {
+    else if (playerSelection == "Rock" && computerSelection == "Paper") {
         return "lose";
     }
-    else if (playerSelection == "rock" && computerSelection == "scissors") {
+    else if (playerSelection == "Rock" && computerSelection == "Scissors") {
         return "win";
     }
-    else if (playerSelection == "paper" && computerSelection == "rock") {
+    else if (playerSelection == "Paper" && computerSelection == "Rock") {
         return "win";
     }
-    else if (playerSelection == "paper" && computerSelection == "scissors") {
+    else if (playerSelection == "Paper" && computerSelection == "Scissors") {
         return "lose";
     }
-    else if (playerSelection == "scissors" && computerSelection == "rock") {
+    else if (playerSelection == "Scissors" && computerSelection == "Rock") {
         return "lose";
     }
-    else if (playerSelection == "scissors" && computerSelection == "paper") {
+    else if (playerSelection == "Scissors" && computerSelection == "Paper") {
         return "win";
     }
 }
