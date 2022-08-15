@@ -1,3 +1,6 @@
+playerScore = 0;
+computerScore = 0;
+
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
@@ -29,38 +32,38 @@ function simulateRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    playerScore = 0;
-    computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Rock, paper or Scissors? ");
-        if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors") {
-            const computerSelection = getComputerChoice();
-            if (simulateRound(playerSelection, computerSelection) == "win") {
-                console.log(`${playerSelection} beats ${computerSelection}`);
-                playerScore ++;
-            }
-            else if (simulateRound(playerSelection, computerSelection) == "lose") {
-                console.log(`${computerSelection} beats ${playerSelection}`);
-                computerScore ++;
-            }
-            else {
-                console.log("Tie!");
-            }
-            console.log(`Your Score: ${playerScore}`);
-            console.log(`Computers Score: ${computerScore}`);
+function game(e) {
+    const score = document.querySelector(".score");
+    const playerSelection = e.target.textContent;
+    if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors") {
+        const computerSelection = getComputerChoice();
+        if (simulateRound(playerSelection, computerSelection) == "win") {
+            console.log(`${playerSelection} beats ${computerSelection}`);
+            score.textContent = `${playerSelection} beats ${computerSelection}`;
+            playerScore ++;
+        }
+        else if (simulateRound(playerSelection, computerSelection) == "lose") {
+            console.log(`${computerSelection} beats ${playerSelection}`);
+            score.textContent = `${computerSelection} beats ${playerSelection}`;
+            computerScore ++;
         }
         else {
-            console.log("Invalid input");
-            i--;
+            console.log("Tie!");
         }
-    }   
-    if (playerScore > computerScore) {
-        console.log("You win!");
+        console.log(`Your Score: ${playerScore}`);
+        console.log(`Computers Score: ${computerScore}`);
     }
-    else if (playerScore < computerScore) {
+    else {
+        console.log("Invalid input");
+        i--;
+    }
+    if (playerScore == 5) {
+        console.log("You win");
+    }
+    else if (computerScore == 5) {
         console.log("You lose");
     }
 }
 
-game();
+const buttons = document.querySelectorAll("button");
+buttons.forEach(button => button.addEventListener("click", game));
