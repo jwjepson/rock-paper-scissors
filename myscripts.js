@@ -39,12 +39,12 @@ function game(e) {
         const computerSelection = getComputerChoice();
         if (simulateRound(playerSelection, computerSelection) == "win") {
             console.log(`${playerSelection} beats ${computerSelection}`);
-            result.textContent = `${playerSelection} beats ${computerSelection}`;
+            result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
             playerScore ++;
         }
         else if (simulateRound(playerSelection, computerSelection) == "lose") {
             console.log(`${computerSelection} beats ${playerSelection}`);
-            result.textContent = `${computerSelection} beats ${playerSelection}`;
+            result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
             computerScore ++;
         }
         else {
@@ -66,13 +66,13 @@ function game(e) {
         displayWinner = document.querySelector(".winner");
         displayWinner.textContent = "You win!";
         buttons.forEach(button => button.disabled = true);
-        console.log("You win");
+        console.log("Game over. You won!");
     }
     else if (computerScore == 5) {
         displayWinner = document.querySelector(".winner");
         displayWinner.textContent = "You lose";
         buttons.forEach(button => button.disabled = true);
-        console.log("You lose");
+        console.log("Game over. You lost!");
     }
 }
 
