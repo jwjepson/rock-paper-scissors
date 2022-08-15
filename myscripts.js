@@ -64,13 +64,13 @@ function game(e) {
     }
     if (playerScore == 5) {
         displayWinner = document.querySelector(".winner");
-        displayWinner.textContent = "You win!";
+        displayWinner.textContent = "Game over. You win!";
         buttons.forEach(button => button.disabled = true);
         console.log("Game over. You won!");
     }
     else if (computerScore == 5) {
         displayWinner = document.querySelector(".winner");
-        displayWinner.textContent = "You lose";
+        displayWinner.textContent = "Game over. You lost!";
         buttons.forEach(button => button.disabled = true);
         console.log("Game over. You lost!");
     }
