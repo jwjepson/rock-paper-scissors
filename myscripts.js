@@ -51,8 +51,12 @@ function game(e) {
             console.log("Tie!");
             result.textContent = "Tie!";
         }
+        playerScoreCount = document.querySelector(".playerScoreCount");
+        computerScoreCount = document.querySelector(".computerScoreCount");
         console.log(`Your Score: ${playerScore}`);
+        playerScoreCount.textContent = (`Your Score: ${playerScore}`);
         console.log(`Computers Score: ${computerScore}`);
+        computerScoreCount.textContent = (`Your Score: ${computerScore}`);
     }
     else {
         console.log("Invalid input");
