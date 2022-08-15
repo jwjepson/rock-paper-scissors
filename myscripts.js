@@ -63,9 +63,13 @@ function game(e) {
         i--;
     }
     if (playerScore == 5) {
+        displayWinner = document.querySelector(".winner");
+        displayWinner.textContent = "You win!";
         console.log("You win");
     }
     else if (computerScore == 5) {
+        displayWinner = document.querySelector(".winner");
+        displayWinner.textContent = "You lose";
         console.log("You lose");
     }
 }
