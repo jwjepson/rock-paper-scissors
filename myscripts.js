@@ -65,11 +65,13 @@ function game(e) {
     if (playerScore == 5) {
         displayWinner = document.querySelector(".winner");
         displayWinner.textContent = "You win!";
+        buttons.forEach(button => button.disabled = true);
         console.log("You win");
     }
     else if (computerScore == 5) {
         displayWinner = document.querySelector(".winner");
         displayWinner.textContent = "You lose";
+        buttons.forEach(button => button.disabled = true);
         console.log("You lose");
     }
 }
