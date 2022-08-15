@@ -56,7 +56,7 @@ function game(e) {
         console.log(`Your Score: ${playerScore}`);
         playerScoreCount.textContent = (`Your Score: ${playerScore}`);
         console.log(`Computers Score: ${computerScore}`);
-        computerScoreCount.textContent = (`Your Score: ${computerScore}`);
+        computerScoreCount.textContent = (`Computer Score: ${computerScore}`);
     }
     else {
         console.log("Invalid input");
