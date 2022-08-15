@@ -34,7 +34,7 @@ function simulateRound(playerSelection, computerSelection) {
 
 function game(e) {
     const result = document.querySelector(".result");
-    const playerSelection = e.target.textContent;
+    const playerSelection = e.target.value;
     if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors") {
         const computerSelection = getComputerChoice();
         if (simulateRound(playerSelection, computerSelection) == "win") {
@@ -76,5 +76,5 @@ function game(e) {
     }
 }
 
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("input");
 buttons.forEach(button => button.addEventListener("click", game));
