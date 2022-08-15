@@ -49,6 +49,7 @@ function game(e) {
         }
         else {
             console.log("Tie!");
+            result.textContent = "Tie!";
         }
         console.log(`Your Score: ${playerScore}`);
         console.log(`Computers Score: ${computerScore}`);
