@@ -60,11 +60,13 @@ function game(e) {
         i--;
     }
     if (playerScore == 5) {
+        result.style.color = "green";
         result.textContent = "Game over. You win!";
         buttons.forEach(button => button.disabled = true);
         console.log("Game over. You won!");
     }
     else if (computerScore == 5) {
+        result.style.color = "red";
         result.textContent = "Game over. You lost!";
         buttons.forEach(button => button.disabled = true);
         console.log("Game over. You lost!");
