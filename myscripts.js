@@ -52,9 +52,7 @@ function game(e) {
         }
         playerScoreCount = document.querySelector(".playerScoreCount");
         computerScoreCount = document.querySelector(".computerScoreCount");
-        console.log(`Your Score: ${playerScore}`);
         playerScoreCount.textContent = (`Your Score: ${playerScore}`);
-        console.log(`Computers Score: ${computerScore}`);
         computerScoreCount.textContent = (`Computer Score: ${computerScore}`);
     }
     else {
@@ -62,14 +60,12 @@ function game(e) {
         i--;
     }
     if (playerScore == 5) {
-        displayWinner = document.querySelector(".winner");
-        displayWinner.textContent = "Game over. You win!";
+        result.textContent = "Game over. You win!";
         buttons.forEach(button => button.disabled = true);
         console.log("Game over. You won!");
     }
     else if (computerScore == 5) {
-        displayWinner = document.querySelector(".winner");
-        displayWinner.textContent = "Game over. You lost!";
+        result.textContent = "Game over. You lost!";
         buttons.forEach(button => button.disabled = true);
         console.log("Game over. You lost!");
     }
