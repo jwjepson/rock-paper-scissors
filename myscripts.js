@@ -37,12 +37,10 @@ function game(e) {
     const computerSelection = getComputerChoice();
     
     if (simulateRound(playerSelection, computerSelection) == "win") {
-        console.log(`${playerSelection} beats ${computerSelection}`);
         result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         playerScore ++;
     }
     else if (simulateRound(playerSelection, computerSelection) == "lose") {
-        console.log(`${computerSelection} beats ${playerSelection}`);
         result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
         computerScore ++;
     }
@@ -51,6 +49,7 @@ function game(e) {
     }
     playerScoreCount = document.querySelector(".playerScoreCount");
     computerScoreCount = document.querySelector(".computerScoreCount");
+    
     playerScoreCount.textContent = (`Your Score: ${playerScore}`);
     computerScoreCount.textContent = (`Computer Score: ${computerScore}`);
     
@@ -58,13 +57,11 @@ function game(e) {
         result.style.color = "green";
         result.textContent = "Game over. You win!";
         buttons.forEach(button => button.disabled = true);
-        console.log("Game over. You won!");
     }
     else if (computerScore == 5) {
         result.style.color = "red";
         result.textContent = "Game over. You lost!";
         buttons.forEach(button => button.disabled = true);
-        console.log("Game over. You lost!");
     }
 }
 
