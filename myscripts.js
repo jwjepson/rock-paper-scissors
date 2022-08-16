@@ -34,31 +34,26 @@ function simulateRound(playerSelection, computerSelection) {
 function game(e) {
     const result = document.querySelector(".result");
     const playerSelection = e.target.value;
-    if (playerSelection.toLowerCase() == "rock" || playerSelection.toLowerCase() == "paper" || playerSelection.toLowerCase() == "scissors") {
-        const computerSelection = getComputerChoice();
-        if (simulateRound(playerSelection, computerSelection) == "win") {
-            console.log(`${playerSelection} beats ${computerSelection}`);
-            result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
-            playerScore ++;
-        }
-        else if (simulateRound(playerSelection, computerSelection) == "lose") {
-            console.log(`${computerSelection} beats ${playerSelection}`);
-            result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
-            computerScore ++;
-        }
-        else {
-            console.log("Tie!");
-            result.textContent = "Tie!";
-        }
-        playerScoreCount = document.querySelector(".playerScoreCount");
-        computerScoreCount = document.querySelector(".computerScoreCount");
-        playerScoreCount.textContent = (`Your Score: ${playerScore}`);
-        computerScoreCount.textContent = (`Computer Score: ${computerScore}`);
+    const computerSelection = getComputerChoice();
+    
+    if (simulateRound(playerSelection, computerSelection) == "win") {
+        console.log(`${playerSelection} beats ${computerSelection}`);
+        result.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+        playerScore ++;
+    }
+    else if (simulateRound(playerSelection, computerSelection) == "lose") {
+        console.log(`${computerSelection} beats ${playerSelection}`);
+        result.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+        computerScore ++;
     }
     else {
-        console.log("Invalid input");
-        i--;
+        result.textContent = "Tie!";
     }
+    playerScoreCount = document.querySelector(".playerScoreCount");
+    computerScoreCount = document.querySelector(".computerScoreCount");
+    playerScoreCount.textContent = (`Your Score: ${playerScore}`);
+    computerScoreCount.textContent = (`Computer Score: ${computerScore}`);
+    
     if (playerScore == 5) {
         result.style.color = "green";
         result.textContent = "Game over. You win!";
